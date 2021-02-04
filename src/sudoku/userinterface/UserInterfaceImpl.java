@@ -76,8 +76,8 @@ public class UserInterfaceImpl implements IUserInterfaceContract.View,
             );
 
             Rectangle horizontalLine = getLine(
-                    xAndY + 64 * index,
                     BOARD_PADDING,
+                    xAndY + 64 * index,
                     thickness,
                     BOARD_X_AND_Y
             );
@@ -150,6 +150,7 @@ public class UserInterfaceImpl implements IUserInterfaceContract.View,
         boardBackground.setHeight(BOARD_X_AND_Y);
 
         boardBackground.setFill(BOARD_BACKGROUND_COLOR);
+        root.getChildren().add(boardBackground);
     }
 
     private void drawTitle(Group root) {
@@ -168,7 +169,7 @@ public class UserInterfaceImpl implements IUserInterfaceContract.View,
 
     @Override
     public void setListener(IUserInterfaceContract.EventListener listener) {
-
+        this.listener = listener;
     }
 
     @Override
